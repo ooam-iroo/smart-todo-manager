@@ -14,11 +14,11 @@ public class Main {
         switch (choice){
 
             case 1:
-                System.out.println("Add Task Selected");
+                menu.addTask();
                 break;
 
             case 2:
-                System.out.println("Show Task selected");
+                menu.showTasks();
                 break;
 
             case 3:
