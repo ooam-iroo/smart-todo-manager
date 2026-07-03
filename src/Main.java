@@ -1,13 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import model.Priority;
+import model.Task;
+import service.TaskService;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+import java.time.LocalDate;
+
+public class Main {
+    public static void main(String[] args){
+        TaskService taskService = new TaskService();
+
+        Task task = new Task(
+                1,
+                "Learn Java",
+                "Study OOP and Collections",
+                Priority.HIGH,
+                LocalDate.of(2026, 7, 10),
+                false
+        );
+
+        taskService.addTask(task);
+
+        System.out.println(taskService.getAllTasks());
+
     }
 }
