@@ -1,25 +1,14 @@
-import model.Priority;
-import model.Task;
-import service.TaskService;
 
-import java.time.LocalDate;
+import util.Menu;
 
 public class Main {
-    public static void main(String[] args){
-        TaskService taskService = new TaskService();
+    public static void main(String[] args) {
 
-        Task task = new Task(
-                1,
-                "Learn Java",
-                "Study OOP and Collections",
-                Priority.HIGH,
-                LocalDate.of(2026, 7, 10),
-                false
-        );
+        Menu menu = new Menu();
 
-        taskService.addTask(task);
+        int choice = menu.getUserChoice();
 
-        System.out.println(taskService.getAllTasks());
+        System.out.println("You selected: " + choice);
 
     }
 }
